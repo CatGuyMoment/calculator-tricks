@@ -46,7 +46,7 @@ def draw_poly(lst):
 
     return string[:-4]
 
-print('quotient:' + draw_poly(new_list[:-1]))
-print('remainder:' + str(new_list[-1]))
+print('quotient: ' + draw_poly(new_list[:-1]))
+print('remainder: ' + str(new_list[-1]))
     
 print('= [ ' + draw_poly([1,c]) + ' ] * [ ' + draw_poly(new_list[:-1]) + ']  + ' + str(new_list[-1]))
