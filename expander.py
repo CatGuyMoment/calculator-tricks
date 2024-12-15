@@ -9,27 +9,6 @@ def factorise(thingy,coeff):
         silly = silly * -coeff
     return new_list
 
- 
-
-amount = int(input('degree = ? '))
-
- 
-
-silly_list = []
-
-for i in range(amount,-1,-1):
-    silly_list.append(float(input('input for degree '+ str(i)+' ')))
-
- 
-
-c = float(input('value to factorise by: (x + ?)  '))
-
- 
-
-new_list = factorise(silly_list,c)
-
-
-
 
 def draw_poly(lst):
     string = '('
@@ -47,8 +26,44 @@ def draw_poly(lst):
 
 
     return string[:-4]
+ 
+def factors(n):
+    result = []
+    for i in range(1, int(abs(n)**0.5) + 1):
+        if n % i == 0:
+            result.append(i)
+            result.append(-i)
+            if i != abs(n) // i:
+                result.append(n // i)
+                result.append(-(n // i))
+    return result
 
-print('quotient: ' + draw_poly(new_list[:-1]))
-print('remainder: ' + str(new_list[-1]))
+
+
+
+amount = int(input('degree = ? '))
+
+ 
+
+silly_list = []
+
+for i in range(amount,-1,-1):
+    silly_list.append(float(input('input for degree '+ str(i)+' ')))
+
+
+index = 0
+factorList =  factors(silly_list[-1])
+while index < len(factorList):
+    factor = factorList[index]
+    index += 1
+
+    attempt = factorise(silly_list,factor)
+
+    if attempt[-1] == 0:
+        print('FACTOR DETECTED: ' + draw_poly([1, factor]) )
+        index = 0
+        silly_list = attempt
     
-print('= [ ' + draw_poly([1,c]) + ' ] * [ ' + draw_poly(new_list[:-1]) + ']  + ' + str(new_list[-1]))
+
+
+ 
