@@ -7,7 +7,24 @@ def factorise(thingy,coeff):
         silly = silly * -coeff
     return new_list
 
- 
+def draw_poly(lst):
+    string = '('
+    for i,v in enumerate(lst):
+        if v != 0:
+            power = len(lst) - i - 1
+            if power == 0:
+                string = string + str(v) + ') + ('
+
+            elif v == 1:
+                string = string +  'x^' + str(power) + ') + ('
+
+            else:
+                string = string + str(v) + 'x^' + str(power) + ') + ('
+
+
+    return string[:-4]
+
+
 
 amount = int(input('degree = ? '))
 
@@ -26,25 +43,6 @@ c = float(input('value to factorise by: (x + ?)  '))
 
 new_list = factorise(silly_list,c)
 
-
-
-
-def draw_poly(lst):
-    string = '('
-    for i,v in enumerate(lst):
-        if v != 0:
-            power = len(lst) - i - 1
-            if power == 0:
-                string = string + str(v) + ') + ('
-
-            elif v == 1:
-                string = string +  'x^' + str(power) + ') + ('
-
-            else:
-                string = string + str(v) + 'x^' + str(power) + ') + ('
-
-
-    return string[:-4]
 
 print('quotient: ' + draw_poly(new_list[:-1]))
 print('remainder: ' + str(new_list[-1]))
