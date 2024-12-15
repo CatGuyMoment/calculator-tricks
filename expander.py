@@ -1,4 +1,4 @@
-#nah, i'd win.
+#nah, i'd win. DOMAIN EXPANSION!
 
 def factorise(thingy,coeff):
     silly = 0
