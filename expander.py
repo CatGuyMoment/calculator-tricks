@@ -60,11 +60,11 @@ while index < len(factorList):
     attempt = factorise(silly_list,factor)
 
     if attempt[-1] == 0:
-        print('FACTOR DETECTED: ' + draw_poly([1, factor]) )
+        print('FACTOR: ' + draw_poly([1, factor]) )
         index = 0
         silly_list = attempt[:-1]
 
-print('Remaining quotient: ', draw_poly(silly_list))
+print('L. FACTOR: ', draw_poly(silly_list))
     
 
 

@@ -37,7 +37,7 @@ for i in range(amount,-1,-1):
 
  
 
-c = float(input('value to factorise by: (x + ?)  '))
+c = float(input('factor: (x + ?)  '))
 
  
 
@@ -47,4 +47,4 @@ new_list = factorise(silly_list,c)
 print('quotient: ' + draw_poly(new_list[:-1]))
 print('remainder: ' + str(new_list[-1]))
     
-print('= [ ' + draw_poly([1,c]) + ' ] * [ ' + draw_poly(new_list[:-1]) + ']  + ' + str(new_list[-1]))
+# print('= [ ' + draw_poly([1,c]) + ' ] * [ ' + draw_poly(new_list[:-1]) + ']  + ' + str(new_list[-1]))
