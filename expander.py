@@ -62,7 +62,9 @@ while index < len(factorList):
     if attempt[-1] == 0:
         print('FACTOR DETECTED: ' + draw_poly([1, factor]) )
         index = 0
-        silly_list = attempt
+        silly_list = attempt[:-1]
+
+print('Remaining quotient: ', draw_poly(silly_list))
     
 
 
